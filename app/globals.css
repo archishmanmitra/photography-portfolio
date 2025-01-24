@@ -17,17 +17,107 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Saans TRIAL';
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+a, p {
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.menu-bar, .menu-overlay-bar, .menu-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.menu-overlay{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+}
+
+.menu-link-item{
+  width: max-content;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu-link-item-holder a{
+  color:black;
+  font-size: 80px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 85%;
+}
+
+.menu-close-icon p{
+  font-size: 100px;
+  line-height: 70%;
+  -webkit-text-stroke: 5px #c5fb45;
+}
+
+@media (max-width: 900px) {
+  .menu-close-icon {
+    display: none;
+  }
+
+  .menu-copy {
+    padding-top: 8em;
+  }
+
+  .menu-link-item-holder a {
+    font-size: 50px;
+  }
+
+  .menu-info{
+    flex-direction: column;
+    padding-left: 2.5rem;
+  }
+}
+.count-wrapper{
+  position: relative;
+  width: 11.25rem;
+  height: 22.5rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  will-change: transform;
+}
+.count{
+  position: relative;
+  width: 1080px;
+  height: 360px;
+  display: flex;
+  transform: translateX(-1080px);
+  will-change: transform;
+}
+.digit{
+  position: relative;
+  width: 180px;
+  height: 360px;
+}
+.digit h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  font-size: 360px;
+  font-weight: lighter;
+  line-height: 1;
+}
+.revealer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
